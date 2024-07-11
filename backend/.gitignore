@@ -1,0 +1,8 @@
+/__pycache__
+/models
+tdidf.pkl
+.env.local
+*.csv
+.env
+*.pkl
+*.ipynb

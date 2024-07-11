@@ -3,12 +3,12 @@ import React from 'react'
 export default function SentimentTab({data}) {
 
   const tell_sentiment = (senti) => {
-    if(senti === 0){
-      return 'Negative'
-    }else if(senti === 1){
-      return 'Neutral'
+    if(senti === -1){
+      return <p className='text-red-600'>'Negative'</p>
+    }else if(senti === 0){
+      return <p className='text-yellow-300'>'Neutral'</p>
     }else{
-      return 'Positive'
+      return <p className='text-green-500'>'Positive'</p>
     }
   }
 

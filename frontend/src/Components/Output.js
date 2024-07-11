@@ -12,7 +12,7 @@ export default function Output({ data }) {
       case "SentimentTab":
         return <SentimentTab data={data}/>;
       case "WordCloud":
-        return <WordCloud />;
+        return <WordCloud data={data}/>;
       case "Visualization":
         return <Visualization />;
       case "Summary":
