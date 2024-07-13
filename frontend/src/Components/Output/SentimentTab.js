@@ -13,10 +13,10 @@ export default function SentimentTab({data}) {
   }
 
   return (
-    <div>
+    <div className='w-screen'>
         {data ? (
-        <div id='table' className="overflow-x-auto">
-          <table className='min-w-full border-2 border-slate-300 divide-y divide-gray-200 table-auto'>
+        <div id='table' className='flex justify-center w-full'>
+          <table className='w-3/4 border-2 border-slate-300 divide-y divide-gray-200 table-auto'>
             <thead className='bg-gray-200'>
               <tr>
                 <th className='px-6 py-3 text-left text-base font-medium text-gray-500 uppercase tracking-wider'>Text</th>

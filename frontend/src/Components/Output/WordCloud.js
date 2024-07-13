@@ -9,7 +9,6 @@ export default function WordCloud({data}) {
       try{
         const response = await axios.post('http://127.0.0.1:5000/wordcloud', {data: data}, { responseType: 'blob' });
         const imageUrl = URL.createObjectURL(response.data);
-        console.log('Response received:', response);
         setWordcloud(imageUrl);
       }catch(err){
         console.error('Error fetching wordcloud',)
@@ -21,7 +20,7 @@ export default function WordCloud({data}) {
   }, [data]);
 
   return (
-    <div>
+    <div className='w-screen flex justify-center'>
       {wordcloud ? (
         <img src={wordcloud} alt='Word Cloud' />
       ) : (

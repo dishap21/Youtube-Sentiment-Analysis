@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import WordCloud from './Output/WordCloud';
 import SentimentTab from './Output/SentimentTab';
-import Summary from './Output/Summary';
 import Visualization from './Output/Visualization';
 
 export default function Output({ data }) {
@@ -14,15 +13,14 @@ export default function Output({ data }) {
       case "WordCloud":
         return <WordCloud data={data}/>;
       case "Visualization":
-        return <Visualization />;
-      case "Summary":
-        return <Summary />;
+        return <Visualization data={data} />;
       default:
         return <SentimentTab />;
     }
   };
 
   return (
+    <div>
     <div className="max-w-6xl mx-auto mt-10">
       <p className='font-bold text-4xl mb-6 text-center'>Output</p>
       <div className="mb-5">
@@ -38,11 +36,10 @@ export default function Output({ data }) {
           <option>SentimentTab</option>
           <option>WordCloud</option>
           <option>Visualization</option>
-          <option>Summary</option>
         </select>
       </div>
       <ul className="hidden text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex">
-        {["SentimentTab", "WordCloud", "Visualization", "Summary"].map((tab) => (
+        {["SentimentTab", "WordCloud", "Visualization"].map((tab) => (
           <li key={tab} className="w-full focus-within:z-10">
             <a
               href="#"
@@ -59,8 +56,9 @@ export default function Output({ data }) {
           </li>
         ))}
       </ul>
-      <div className="mt-5">{renderTabContent()}</div>
     </div>
+    </div>
+    <div className="mt-5">{renderTabContent()}</div>
     </div>
   );
 }
